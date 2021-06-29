@@ -90,7 +90,7 @@ if __name__ == '__main__':
 
     if rospy.get_param('~allow_growth'):
         config = tf.ConfigProto()
-        config.gpu_options.allow_grows = True
+        config.gpu_options.allow_growth = True
         pose_estimator = TfPoseEstimator(graph_path, target_size=(w, h), tf_config=config)
     else:
         pose_estimator = TfPoseEstimator(graph_path, target_size=(w, h))
