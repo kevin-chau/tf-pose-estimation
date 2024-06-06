@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-import time
 import os
 import sys
-import ast
 
 from threading import Lock
 import rospy
 import rospkg
 import tensorflow as tf
 from cv_bridge import CvBridge, CvBridgeError
-from std_msgs.msg import String
 from sensor_msgs.msg import Image
 from tfpose_ros.msg import Persons, Person, BodyPartElm
 
@@ -89,7 +86,7 @@ if __name__ == '__main__':
         sys.exit(-1)
 
     if rospy.get_param('~allow_growth'):
-        config = tf.ConfigProto()
+        config = tf.compat.v1.ConfigProto()
         config.gpu_options.allow_growth = True
         pose_estimator = TfPoseEstimator(graph_path, target_size=(w, h), tf_config=config)
     else:
