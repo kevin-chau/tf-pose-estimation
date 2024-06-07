@@ -1,11 +1,10 @@
 #!/usr/bin/env python
-import time
 import cv2
 import rospy
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
-from tfpose_ros.msg import Persons, Person, BodyPartElm
+from tfpose_ros.msg import Persons
 from tf_pose.estimator import Human, BodyPart, TfPoseEstimator
 
 

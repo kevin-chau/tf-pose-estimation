@@ -35,7 +35,6 @@ def humans_to_msg(humans):
 
 
 def callback_image(data):
-    # et = time.time()
     try:
         cv_image = cv_bridge.imgmsg_to_cv2(data, "bgr8")
     except CvBridgeError as e:

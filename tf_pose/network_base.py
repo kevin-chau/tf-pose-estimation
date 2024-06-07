@@ -5,6 +5,7 @@ import sys
 import abc
 import numpy as np
 import tensorflow as tf
+if type(tf.contrib) != type(tf): tf.contrib._warning = None
 import tensorflow.contrib.slim as slim
 
 from tf_pose.common import to_str
