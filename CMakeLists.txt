@@ -31,3 +31,6 @@ catkin_package(
 )
 
 install()
+
+# Build pafprocess for tf_pose
+execute_process(COMMAND bash "-c" "cd ../src/person_following_orin/src/tf-pose-estimation/tf_pose/pafprocess && swig -python -c++ pafprocess.i && python3 setup.py build_ext --inplace")
